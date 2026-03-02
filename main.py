@@ -1,6 +1,7 @@
-import sys # модуль управления выходом
-from src.transaction import Transaction
+import sys  # модуль управления выходом
+
 from src.bank import Bank
+from src.transaction import Transaction
 
 
 def main():
@@ -9,8 +10,8 @@ def main():
     """
     try:
         # инициализация
-        t1 = Transaction('Viktor', 'Ivan', '5000.50')
-        t2 = Transaction('Mark', 'Oleg', '2500.00')
+        t1 = Transaction("Viktor", "Ivan", "5000.50")
+        t2 = Transaction("Mark", "Oleg", "2500.00")
 
         my_bank = Bank()
         my_bank.add_transaction(t1)
@@ -33,6 +34,7 @@ def main():
         # если не прошло
         print(f"❌ КРИТИЧЕСКАЯ ОШИБКА: {e}")
         return 1
+
 
 if __name__ == "__main__":
     sys.exit(main())
