@@ -1,5 +1,4 @@
 class Transaction:
-
     def __init__(self, sender, receiver, amount):
         self.sender = sender.strip().lower()
         self.receiver = receiver.strip().lower()
@@ -7,7 +6,8 @@ class Transaction:
         try:
             self._amount = float(amount)
         except ValueError:
-            self._amount = 0.0
+            # ВАЖНО: Мы не ставим 0.0, мы ГОВОРИМ об ошибке!
+            raise ValueError(f"Недопустимая сумма: {amount}")
 
     @property
     def amount(self):
